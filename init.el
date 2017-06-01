@@ -25,6 +25,15 @@
 			 js2-mode
 			 popwin
 			 php-mode
+			 web-mode
+			 dash
+			 multiple-cursors
+			 js2-refactor
+			 expand-region
+			 ;;org-pomodoro
+			 pomodoro
+			 ;;helm-ag
+			 powerline
 			 ) "Default packages")
 
 (setq package-selected-packages dklee/packages)
@@ -134,6 +143,43 @@
 (eval-after-load 'php-mode
   '(require 'php-ext))
 
+;;config cursor
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-unset-key (kbd "M-<down-mouse-1>"))
+(global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)
+
+
+;;config js2-refactor
+(require 'js2-refactor)
+    (add-hook 'js2-mode-hook #'js2-refactor-mode)
+    (js2r-add-keybindings-with-prefix "C-c C-m")
+
+;;config expand-region
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+;;config org-pomodoro
+;;(require 'org-pomodoro)
+
+;;config pomodoro
+(require 'pomodoro)
+(pomodoro-add-to-mode-line)
+
+;;config change M-n M-p to C-n C-p
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "C-n") #'company-select-next)
+  (define-key company-active-map (kbd "C-p") #'company-select-previous))
+
+;;powerline
+(require 'powerline)
+(powerline-default-theme)
+
+
+
 
 
 (custom-set-variables
@@ -144,7 +190,8 @@
  '(company-idle-delay 0.3)
  '(custom-safe-themes
    (quote
-    ("ebe90a9395fe0f2ac2f9bf8589daf28dc027b427b3e569e7b1eea795a924a136" default))))
+    ("ebe90a9395fe0f2ac2f9bf8589daf28dc027b427b3e569e7b1eea795a924a136" default)))
+ '(org-pomodoro-length 35))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -1,16 +1,24 @@
 
 ;; ----- smex-history -----
 (
- org-version
- cd
- 5x5
- arp
- dbx
- dig
- erc
+ helm-ag-project-root
+ helm-ag
+ pomodoro-start
+ org-pomodoro
+ customize-group
+ occur-edit-mode
+ customize
 )
 
 ;; ----- smex-data -----
 (
  (org-version . 1)
+ (customize-group . 3)
+ (replace-string . 4)
+ (customize . 1)
+ (occur-edit-mode . 1)
+ (org-pomodoro . 3)
+ (pomodoro-start . 3)
+ (helm-ag . 1)
+ (helm-ag-project-root . 3)
 )

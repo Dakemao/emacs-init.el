@@ -4,6 +4,13 @@
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
+;;cvt 1440 900
+;;xrandr --newmode 1440x900 106.50 1440 1528 1672 1904 900 903 909 934 -hsync +vsync
+;;xrandr --addmode DVI-1 1440x900
+;;xrandr --output DVI-1 --mode 1440x900
+
+
+;;export LC_CTYPE=zh_CN.UTF-8
 ;; You may delete these explanatory comments.
 ;;(package-initialize)
 
